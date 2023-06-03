@@ -1,0 +1,54 @@
+﻿@page
+@model WebApplication4.Pages.Employees.IndexModel
+@{
+}
+
+<br>
+<h2>List Of Employees</h2>
+<a class="btn btn-primary btn-sm" href="/Privacy">New Employee</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date Of Birth</th>
+            <th>Phone</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    @if (Model.message.Length > 0)
+    {
+        <div class='alert alert-success alert-dismissible fade show' role='alert'>
+
+            <strong>@Model.message</strong> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label='Close' onclick="function(){
+    document.getElementById('close').onclick = function(){
+        this.parentNode.parentNode.remove();
+        return false;
+    };
+};"></button>
+        </div>
+        
+    }
+    <tbody>
+        @foreach(var item in Model.emps)
+        {
+            <tr>
+                <td>@item.EmpID</td>
+                <td>@item.EmpName</td>
+                <td>@item.Email</td>
+                <td>@item.DoB</td>
+                <td>@item.Phone</td>
+                <td>@item.Department</td>
+            </tr>
+        }
+    </tbody>
+</table>
