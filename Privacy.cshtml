@@ -1,0 +1,56 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "EMPLOYEE REGISTRATION";
+}
+<h1>@ViewData["Title"]</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <!--<h1>Employee Registration</h1>-->   
+        <form method="POST">
+            <div class="form-group">
+                <label for="id">Employee ID</label>
+                <input type="Number" class="form-control" name="EmpID" value="@Model.emps.EmpID" placeholder="Enter ID" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="EmpName" value="@Model.emps.EmpName" placeholder="Enter name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="Email" value="@Model.emps.Email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date Of Birth</label>
+                <input type="date" class="form-control" name="DoB" value="@Model.emps.DoB" placeholder="Enter date of birth" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" class="form-control" name="Phone" value="@Model.emps.Phone" placeholder="Enter phone no" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Department</label>
+
+                <select class="form-control" name="Department" value="@Model.emps.Department" required>
+                    <option value="">Select department</option>
+                    <option value="hr">HR</option>
+                    <option value="finance">Finance</option>
+                    <option value="it">IT</option>
+                    <option value="marketing">Marketing</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" asp-page="/done">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

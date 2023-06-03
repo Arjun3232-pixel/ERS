@@ -1,54 +1,13 @@
 ﻿@page
-@model WebApplication4.Pages.Employees.IndexModel
+@model IndexModel
 @{
+    ViewData["Title"] = "Home page";
 }
+<body>
+<div class="text-center">
 
-<br>
-<h2>List Of Employees</h2>
-<a class="btn btn-primary btn-sm" href="/Privacy">New Employee</a>
-
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p><br /><br />
+        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy"><h1 class="display-4"><u>EMPLOYEE REGISTRATION SYSTEM</u></h1></a>
 </div>
-
-</div>
-
-
-</div>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Date Of Birth</th>
-            <th>Phone</th>
-            <th>Department</th>
-        </tr>
-    </thead>
-    @if (Model.message.Length > 0)
-    {
-        <div class='alert alert-success alert-dismissible fade show' role='alert'>
-
-            <strong>@Model.message</strong> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label='Close' onclick="function(){
-    document.getElementById('close').onclick = function(){
-        this.parentNode.parentNode.remove();
-        return false;
-    };
-};"></button>
-        </div>
-        
-    }
-    <tbody>
-        @foreach(var item in Model.emps)
-        {
-            <tr>
-                <td>@item.EmpID</td>
-                <td>@item.EmpName</td>
-                <td>@item.Email</td>
-                <td>@item.DoB</td>
-                <td>@item.Phone</td>
-                <td>@item.Department</td>
-            </tr>
-        }
-    </tbody>
-</table>
+</body>
